@@ -10,13 +10,14 @@ npm install --save Scanner
 create Scanner
 ```javascript
 
+var Scanner = require('Scanner')
+var text = "test"
+var scan = new Scanner(text);
+
 ```
 
 match and peek
 ```javascript
-var Scanner = require('Scanner')
-var text = "test"
-var scan = new Scanner(text);
 
 // use match() to fetch text from origin text
 
@@ -115,7 +116,17 @@ var scan = new Scanner('text',
 
 show location
 ```javascript
-// there are times you need to write
+// there are times you need to add location info on your match item
+// the config for it wis on option object
+var scan = new Scanner({
+  location:"index" // type can be string and array
+})
+
+// sometimes you want the location be the index of string which will return [start_index, end_index]. For this case, set location="index"
+// sometimes you want the location be the row-col of string, which will return {start:[row,col],end:[row,col]}, For this case, set location = "row-col"
+// sometimes you want both the location info, then set location:["index","row-col"]
+// sometimes, the default row-col is not start with [0,0], we can set this by location_row_base:n,location_col_base:n
+
 ```
 
 ## Issue
@@ -126,6 +137,7 @@ show location
 * bench mark test
 * implement regex locally in Scanner instead of fetch rest text again and again and use them with RegExp
 * add more configuration for skip so that it might be helpful to the performance
+* seperate scanner with location info and without location info
 
 ## Pattern we usually used (write it in another page)
 * match brackets
