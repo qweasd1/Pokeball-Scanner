@@ -1,16 +1,16 @@
 # Scanner
-Scanner is a transactional text scanner help you to extract sub-text from original text. It's helpful to use it to write complex compiler.
+Pokeball-Scanner is a transactional text scanner help you to extract sub-text from original text. It's helpful to use it to write complex compiler.
 
 ## install
 ```
-npm install --save Scanner
+npm install --save Pokeball-Scanner
 ```
 
 ## Basic usage
 create Scanner
 ```javascript
 
-var Scanner = require('Scanner')
+var Scanner = require('Pokeball-Scanner')
 var text = "test"
 var scan = new Scanner(text);
 

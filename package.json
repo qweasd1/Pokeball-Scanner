@@ -1,7 +1,7 @@
 {
-  "name": "Scanner",
+  "name": "Pokeball-Scanner",
   "version": "1.0.0",
-  "description": "Scanner is a transactional text reader help to write complex Compiler more easily.",
+  "description": "Pokeball-Scanner is a transactional text reader help to write complex Compiler more easily.",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --recursive"
@@ -9,6 +9,11 @@
   "keywords": ["Scanner","Compiler"],
   "author": "qweasd1z1z",
   "license": "ISC",
+  "repository" :  {
+     "type" : "git",
+     "url" : "https://github.com/qweasd1/Pokeball-Scanner"
+  },
+
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
