@@ -14,7 +14,10 @@
 
 
 ## [! this design is still not systematically analysis] IndexToRowColTransformer design
-*  what happend if the index out of bound?
+* how we define the range? (the start of the char and the next position of the end char)
+  * [! see if this have any bad effect if we use it with editor selection] so we need to include a virtual next position if our range's end is the text's end
+  * [!!] check the last point logic is correct
+*  what happend if the index out of bound?  
   [current in code] return null
 
 ## sample

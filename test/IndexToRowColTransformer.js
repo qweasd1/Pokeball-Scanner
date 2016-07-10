@@ -8,7 +8,7 @@ describe("IndexToRowColTransformerFactory",function () {
      ,rowCol;
 
   function testTransformer(index,expectedStart, expectedEnd) {
-    rowCol = transformer.transformBound(index);
+    rowCol = transformer.rangeToRowCol(index);
     expect(rowCol).to.be.deep.equal({start:expectedStart,end:expectedEnd});
   }
 
@@ -29,8 +29,8 @@ describe("IndexToRowColTransformerFactory",function () {
       testTransformer([0,2],[0,0],[0,2]);
     })
 
-    it("index = [0,3] endIndex out of bound",function () {
-      testTransformer([0,3],[0,0],null);
+    it("index = [0,4] endIndex out of bound",function () {
+      testTransformer([0,4],[0,0],null);
     })
 
   })
@@ -57,8 +57,8 @@ describe("IndexToRowColTransformerFactory",function () {
         testTransformer([0,3],[0,0],[0,3]);
       })
 
-      it("index = [0,4]",function () {
-        testTransformer([0,4],[0,0],null);
+      it("index = [0,5]",function () {
+        testTransformer([0,5],[0,0],null);
       })
     })
 
@@ -83,12 +83,12 @@ describe("IndexToRowColTransformerFactory",function () {
         testTransformer([0,7],[0,0],[2,1]);
       })
 
-      it("row-col = [2,0],[3,1]",function () {
+      it("row-col = [2,0],[2,1]",function () {
         testTransformer([3,7],[1,0],[2,1]);
       })
 
-      it("row-col = [2,0],[3,2] out of bound",function () {
-        testTransformer([3,8],[1,0],null);
+      it("row-col = [2,0],[2,2]",function () {
+        testTransformer([3,8],[1,0],[2,2]);
       })
     })
 
@@ -113,16 +113,16 @@ describe("IndexToRowColTransformerFactory",function () {
         testTransformer([0,7],[0,0],[2,1]);
       })
 
-      it("row-col = [2,0],[3,1]",function () {
+      it("row-col = [2,0],[2,1]",function () {
         testTransformer([3,7],[1,0],[2,1]);
       })
 
-      it("row-col = [2,0],[3,2] ",function () {
+      it("row-col = [2,0],[2,2] ",function () {
         testTransformer([3,8],[1,0],[2,2]);
       })
 
-      it("row-col = [2,0],[4,0] ",function () {
-        testTransformer([3,9],[1,0],null);
+      it("row-col = [2,0],[3,0] ",function () {
+        testTransformer([3,9],[1,0],[3,0]);
       })
     })
 
@@ -158,7 +158,7 @@ describe("IndexToRowColTransformerFactory",function () {
       })
 
       it("row-col = [2,0],[4,0] ",function () {
-        testTransformer([3,9],[2,1],null);
+        testTransformer([3,9],[2,1],[4,1]);
       })
     })
 
