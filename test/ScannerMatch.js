@@ -95,6 +95,31 @@ describe("Scanner",function () {
     })
   })
 
+  describe("matchUntil",function () {
+    beforeEach(function () {
+      scan = new Scanner("test'+");
+    })
+
+    it("matchUntil one item",function () {
+      var m = scan.matchUntil("'");
+      expect(m).to.deep.equal(["test","'"]);
+      expect(scan._cursor).to.equal(5);
+    })
+
+    it("matchUntil mutiple item",function () {
+      scan = new Scanner("test,,+");
+      var m = scan.matchUntil("'",",,");
+      expect(m).to.deep.equal(["test",",,"]);
+      expect(scan._cursor).to.equal(6);
+    })
+
+    it("matchUnitilExclude",function () {
+      var m = scan.matchUnitilExclude("'");
+      expect(m).to.deep.equal("test");
+      expect(scan._cursor).to.equal(4);
+    })
+  })
+
   describe("set matchReturnType",function () {
     it("matchReturnType='token'",function () {
       var scan = new Scanner("test",{matchReturnType:'token'});

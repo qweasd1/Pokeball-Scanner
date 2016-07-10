@@ -2,8 +2,10 @@
 ## new feature
 * add matchUntil(str1,str2,...)
   * match str1, str2,... one by one, if one success, return [matchValue,matchStr] and move the cursor after matchStr
+  * alias: matchu
 * add matchUnitilExclude(str1, str2,...)
   * match str1, str2,... one by one, if one success, return matchValue,matchStr and move the cursor before matchStr
+  * alias: matchue
 * add Scanner inherit on Scanner class
   * add defineParseMethod(name,type,config), this will add a method(which has the name of 'name' you give in defineMatch(name,...))
     * when you call the method on Scanner, if you got the return value as token
@@ -25,7 +27,7 @@
     * value: only return the match string
     * token: return a token object
   * by default, Scanner's matchReturnType='value', but if you turn on the location api, it will use set implicityly as 'token'
-
+* the logic inside ```Scanner._matchUnitl``` might be strange(e.g. the rollback()), the performance might be not good either, so analysis here.
 ## document
 * how to create Scanner
 * how to config Scanner with option object
@@ -45,7 +47,8 @@
 
 ## testing
 * add more test for Scanner initialize especially for skip pattern config checking
-
+* add complex test
+  * [!] skip + matchUntil
 
 
 ## performance tuning
