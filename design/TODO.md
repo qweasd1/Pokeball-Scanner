@@ -1,6 +1,6 @@
 * add more test for Scanner initialize especially for skip pattern config checking
 
-// performance tuning
+## performance tuning
 * tuning the match logic to make it more efficient
   * find which kind of tuning is available
 * check RegExp's compile property, to see if our soluton use the compiled version
@@ -13,6 +13,9 @@
 * [out] how we implement RegExp and make it efficiently
 
 
+## [! this design is still not systematically analysis] IndexToRowColTransformer design
+*  what happend if the index out of bound?
+  [current in code] return null
 
 ## sample
 * to skip single-line-comment (```/\/\/(.|\r)*(\n|$)/```)
