@@ -1,6 +1,6 @@
 {
   "name": "Pokeball-Scanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pokeball-Scanner is a transactional text reader help to write complex Compiler more easily.",
   "main": "lib/index.js",
   "scripts": {
