@@ -95,5 +95,12 @@ describe("Scanner",function () {
     })
   })
 
+  describe("set matchReturnType",function () {
+    it("matchReturnType='token'",function () {
+      var scan = new Scanner("test",{matchReturnType:'token'});
+      var m =scan.matchi(4);
+      expect(m).to.deep.equal({value:"test"});
+    })
+  })
 
 })
