@@ -11,3 +11,10 @@
   * actually if we use SubScanner, this won't slow down the performance a lot
   * [!] however inside the ```_matchRegex()``` we call this.rest() which might slow down the performance
 * [out] how we implement RegExp and make it efficiently
+
+
+
+## sample
+* to skip single-line-comment (```/\/\/(.|\r)*(\n|$)/```)
+  * since '.' in javascript can't match \r or \n, we need to use (.|\r) to match text before \n
+  * we also need to consider comment at the end of file without a '\n'

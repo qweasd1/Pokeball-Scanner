@@ -32,7 +32,7 @@ describe("Scanner",function () {
       expect(scan._textLength).to.be.equal(text.length);
       expect(scan._cursor).to.be.equal(0);
       expect(scan._hasSkipPattern).to.be.equal(true);
-      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/\/\/.*?\n/,isCollect:false}]);
+      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/^\/\/.*?\n/,isCollect:false}]);
     })
 
     it("(isCollect is false)",function () {
@@ -49,7 +49,7 @@ describe("Scanner",function () {
       expect(scan._textLength).to.be.equal(text.length);
       expect(scan._cursor).to.be.equal(0);
       expect(scan._hasSkipPattern).to.be.equal(true);
-      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/\/\/.*?\n/,isCollect:false}]);
+      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/^\/\/.*?\n/,isCollect:false}]);
     })
 
     it("(isCollect is true)",function () {
@@ -66,7 +66,7 @@ describe("Scanner",function () {
       expect(scan._textLength).to.be.equal(text.length);
       expect(scan._cursor).to.be.equal(0);
       expect(scan._hasSkipPattern).to.be.equal(true);
-      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/\/\/.*?\n/,isCollect:true}]);
+      expect(scan._skipPatterns).to.be.deep.equal([{name:"comment",pattern:/^\/\/.*?\n/,isCollect:true}]);
     })
   })
 
